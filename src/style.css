@@ -1,5 +1,6 @@
 body {
   background: rgb(229, 244, 247);
+  font-family: Helvetica, Arial, sans-serif;
 }
 .container {
   margin: 50px auto;
@@ -12,23 +13,32 @@ h1 {
   line-height: 1.5;
   font-weight: 800px;
 }
-form {
-  padding: 30px;
+.form-container {
+  padding: 15px 20px;
   margin-bottom: 20px;
   background: white;
-  display: flex;
   border-radius: 10px;
   box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
-
-  #input {
-    padding: 15px;
-    border-radius: 50px;
-    border: 2px solid rgb(97, 177, 252);
-    width: 70%;
-    font-size: 16px;
-    line-height: 20px;
-  }
 }
+form {
+  display: flex;
+}
+
+.hint {
+  line-height: 1.5;
+  margin-top: 5px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+#input {
+  padding: 15px;
+  border-radius: 50px;
+  border: 2px solid rgb(97, 177, 252);
+  width: 70%;
+  font-size: 16px;
+  line-height: 20px;
+}
+
 #submit {
   padding: 15px;
   margin-left: 5px;
@@ -44,22 +54,40 @@ main {
   margin-bottom: 30px;
 }
 .poem {
+  font-size: 16px;
+  background-color: #fff;
   padding: 20px;
-  background-color: white;
-  font-size: 14px;
-  line-height: 24px;
-  box-shadow: 0px 4px 30px 0px rgba(39, 33, 66, 0.03);
   line-height: 2;
+
+  box-shadow: 0px 4px 30px 0px rgba(39, 33, 66, 0.03);
   border-left: 5px solid rgb(83, 179, 224);
 }
 .poem strong {
   color: #53b3e0;
 }
 footer {
-  margin-top: 30px;
   text-align: center;
-  line-height: 20px;
+  font-size: 13px;
+  margin-top: 30px;
+  color: rgba(0, 0, 0, 0.8);
 }
 a {
   color: rgb(32, 167, 230);
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.blink {
+  animation: blink 1s infinite;
+  font-size: 16px;
 }
