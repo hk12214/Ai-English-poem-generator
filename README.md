@@ -1,4 +1,4 @@
-English Poem Writer (AI)
+Ai-English-poem-generator
 
 This is a simple web application that generates English poems using an AI API.
 It is developed using HTML, CSS, and JavaScript.
