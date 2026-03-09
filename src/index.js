@@ -22,3 +22,14 @@ function generatePoem(event) {
 }
 let poemForm = document.querySelector("#form");
 poemForm.addEventListener("submit", generatePoem);
+
+function copyPoem() {
+  let poemText = document.querySelector("#poem").innerText;
+
+  navigator.clipboard.writeText(poemText).then(function () {
+    alert("Poem copied to clipboard!");
+  });
+}
+
+let copyButton = document.querySelector("#copyBtn");
+copyButton.addEventListener("click", copyPoem);
