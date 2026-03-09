@@ -1,103 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
 html,
 body {
   height: 100%;
-  margin: 0;
 }
+
 body {
   background-image: url("https://t4.ftcdn.net/jpg/08/62/72/61/240_F_862726142_aQD4BfWwUvebl1obq0FiW3ON5f0iSqMv.jpg");
-  font-family: Helvetica, Arial, sans-serif;
-  background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: -1;
+}
+
 .container {
-  margin: 70px auto;
-  max-width: 600px;
+  max-width: 650px;
+  width: 90%;
+  text-align: center;
 }
 
 h1 {
-  font-weight: 800;
-  font-size: 36px;
-  line-height: 1.5;
-  color: #87668f;
+  font-size: 40px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg,#87668f,#53b3e0);
+  webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
 }
 .form-container {
-  padding: 15px 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
 }
 form {
   display: flex;
+  gap: 10px;
 }
-
 .hint {
   line-height: 1.5;
-  margin-top: 5px;
+  margin-top: 8px;
   font-size: 12px;
   opacity: 0.6;
 }
 #input {
-  padding: 15px;
-  border-radius: 50px;
+  flex: 1;
+  padding: 14px;
+  border-radius: 40px;
   border: 2px solid #87668f;
-  width: 70%;
   font-size: 16px;
-  line-height: 20px;
+  outline: none;
+}
+
+#input:focus {
+  border-color: #53b3e0;
 }
 
 #submit {
-  margin-left: 5px;
-  border-radius: 50px;
   border: none;
-  width: 100px;
-  background: #87668f;
+  border-radius: 40px;
+  padding: 14px 20px;
+  background: linear-gradient(90deg,#87668f,#53b3e0);
   color: white;
   font-size: 16px;
-  line-height: 20px;
-  margin-left: 10px;
-  padding: 14px 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+#submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
 main {
   margin-bottom: 30px;
 }
 .poem {
-  font-size: 16px;
-  padding: 20px;
-  margin-top: 30px;
-  font-style: normal;
-  font-weight: 400;
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.95);
   line-height: 2;
-  box-shadow: 0px 4px 30px 0px rgba(39, 33, 66, 0.03);
-  background-color: #fff;
-  border-left: 5px solid #87668f;
+  font-size: 17px;
+  text-align: left;
+  border-left: 6px solid #87668f;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  animation: fadeIn 0.8s ease;
 }
 .poem strong {
   color: #53b3e0;
 }
 footer {
-  text-align: center;
+  margin-top: 25px;
   font-size: 13px;
-  margin-top: 30px;
-  color: rgba(225, 219, 243, 0.8);
+  color: #eee;
 }
+
+footer a {
+  color: #53b3e0;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 a {
   color: #87668f;
 }
 @keyframes blink {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  0% {opacity:1;}
+  50% {opacity:0;}
+  100% {opacity:1;}
 }
+
 .blink {
   animation: blink 1s infinite;
-  font-size: 16px;
+}
+@keyframes fadeIn {
+  from {
+    opacity:0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
 }
