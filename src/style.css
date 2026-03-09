@@ -30,14 +30,12 @@ body::before {
   width: 90%;
   text-align: center;
 }
-
-h1 {
+ h1 {
   font-size: 40px;
   margin-bottom: 20px;
-  background: linear-gradient(90deg,#87668f,#53b3e0);
-  webkit-background-clip: text;
-  color: transparent;
-  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7);
 }
 .form-container {
   padding: 25px;
@@ -139,4 +137,20 @@ a {
     opacity:1;
     transform: translateY(0);
   }
+}
+#copyBtn {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #53b3e0;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#copyBtn:hover {
+  background: #87668f;
+  transform: scale(1.05);
 }
